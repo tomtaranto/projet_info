@@ -1,0 +1,62 @@
+\documentclass[a4paper, 11pt]{article}
+
+\usepackage[utf8]{inputenc}  
+\usepackage[T1]{fontenc}
+\usepackage[french]{babel}
+
+
+
+\begin{document}
+
+\title{Projet informatique : tourisme spatial}
+\author{Félix Charvin, Alexandre de Boé, Florian Da Silva, Tom Taranto}
+\date{\today}
+
+\maketitle
+
+\section{Structures de données}
+
+\subsection{listePersonnes}
+listePersonnes contient les informations concernant les personnes : leurs choix ainsi que leur priorité.
+
+Nous avons choisi pour cette structure d'utiliser une liste triée par priorité décroissante, afin de pouvoir accéder directement à la personne avec la plus haute priorité.
+
+Les informations de la personnes sont contenues dans un tableau de 17 \texttt{char*} organisé comme : [nom, prénom, choix1, choix2, 6 planètes du choix1, 6 planètes du choix2, priorité].
+
+
+\subsection{dictPersonnes}
+Les choix des personnes et leur priorité ne se trouvant pas dans le même fichier, nous avions besoin pour remplir listePersonnes d'une structure intermédiaire.
+
+dictPersonnes est un dictionnaire qui à la clef [nom, prénom] renvoie la priorité de la personne en question.
+
+Nous avons choisi un dictionnaire car nous avions besoin d'une structure adaptée aux recherches.
+
+Ce dictionnaire est implémenté par une table de hachage, utilisant pour fonction de hachage la méthode de la multiplication avec la constante $\frac{\sqrt{5}-1}{2}$.
+
+\subsection{dictDestinations}
+dictDestinations contient les informations concernant les croisières proposées. C'est un dictionnaire dont les clés sont les planètes et la valeur associée à chaque clé est le nombre de places restantes pour la planète en question.
+
+En pratique, nous avons choisi d'utiliser un dictionnaire par zone. Chaque croisière est représentée par un tableau de dictionnaires de 6 cases, chacune contenant les planètes d'une zone en particulier.
+
+Nous avons choisi d'utiliser une structure de dictionnaire car nous voulions une structure adaptée aux recherches permettant d'obtenir facilement le nombre de places restantes pour une planète, en connaissant son nom et sa zone.
+
+De même que pour dictPersonnes, ce dictionnaire est implémenté par une table de hachage avec la même fonction de hachage.
+
+\subsection{dictContraintes}
+dictContraintes est la structure regroupant les informations sur les différentes contraintes. C'est un dictionnaire dont la clé est le nom d'une planète et la valeur associé un tableau de 3 \texttt{char*} : [zone associée à la planète clé, planète contrainte, zone associée à la planète contrainte]
+
+Nous avons choisi d'avoir en valeur de retour les zones des planètes car, par la façon dont nous avons contruit la structure contenant les informations sur les planètes (tableau de dictionnaires), nous avions besoin de conna\^itre le nom d'une planète ainsi que sa zone pour savoir le nombre de places restantes.
+
+De même que pour dictPersonnes, ce dictionnaire est implémenté par une table de hachage avec la même fonction de hachage.
+
+\subsection{listeFinale}
+listeFinale est une liste contenant les informations concernant le choix attribué à chaque personne. 
+
+Elle contient un tableau de 9 \texttt{char*} : [nom, prénom, choix retenu, les 6 planètes du choix retenu].
+
+Elle sert à l'exportation vers le fichier csv. 
+
+
+
+
+\end{document}

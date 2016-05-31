@@ -1,0 +1,9 @@
+Problèmes rapport :
+
+- Pas d'intro / conclusion
+- Implémentation des dictionnaires (table de hachage)
+- Détail planning
+- Dire qu'on a fait des tests
+- Affectation :
+  problème s'il ne reste à la fin que des places dans une planète dont la
+  contrainte est pleine, il faudrait pouvoir faire des réaffectations

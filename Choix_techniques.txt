@@ -1,0 +1,55 @@
+
+Tables :
+       Souhait voyageurs liste de tableaux  
+       Contraintes liste de tableaux
+       Destinations tableau de liste de struct{ nom planete, nbr place}
+       indices de priorité liste de struct{nom, prenom, priorité} (triée)
+       Tables des croisières tableau de liste de struct{ nom planete, nbr de place}
+       
+
+
+Algorithme d'affectation :
+	   Creer 2 listes vides
+      	   Parcourir liste des voyageurs
+	  	si voyage organisé choix1 -> voyageur mis dans liste 1
+	     	sinon liste2
+	  Tri des deux listes en fct de la priorité
+    	  Pour chaque voyageur liste1(preorganise:
+	       affecter 1er choix si possible(quotas) dans resultat + enlever de la liste
+	       sinon
+	         si choix2=libre -> on le reinsere dans liste2 avec priorité + modif de son choix1 (choix1=choix2)
+		 sinon
+	           affecter 2e choix si possible(contraintes) dans resultat + retirer de la liste
+		   sinon -> on le met dans liste3
+	       
+	  Pour chaque voyageur liste2:
+	       verification voyage possible contraintes (choix1)
+	       Verification des quotas(choix1)
+	       on le met dans resultat
+	       sinon
+	          si choix2!=libre
+		    on verifie les quotas et si posiible on l'affecte
+		    sinon on le met dans liste3
+		  sinon
+		    on le met dans liste3
+		    
+	  on renverse la liste3 pour garder un ordre de priorité       
+          Pour chaque voyageur liste3:
+	       trouve une croisiere satisfaisante pour son choix1
+
+	retourner le fichier CSV
+	
+Découpage:
+	module importation :1  mettre les données CSV dans les bonnes structures de données
+	       Liste : 0.5 implémente les structures de données insérer/ rechercher?
+	       Structure : 0.5 implémente toutes les structures
+	       Affectation : 2 met les gens dans des croisières
+	 Main
+	 Makefile
+	       
+	       
+
+
+
+Choix du langage:
+      C: partique + simple + usuel

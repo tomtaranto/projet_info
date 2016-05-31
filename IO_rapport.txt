@@ -1,0 +1,5 @@
+Importation/Exportation
+
+Au début, ce module a paru plutôt simple à réalisé sachant que les données dans les fichiers .csv était toutes écrites dans un même format. Néanmoins, en réalisant les tests unitaires sur les différentes fonctions, nous nous sommes vite rendu compte que ce n'était pas si simple que ça et qu'il fallait trouver les bonnes fonctions et les bonnes options afin de bien traiter les données en brut.
+Cela fait, nous nous sommes confrontés au problème de l'allocation mémoire qui s'est avéré au final être plus compliqué que prévu mais que nous avons pu résoudre en raisonnant simplement en terme de données stockées et de boucle à parcourir.
+Le dernier problème rencontré est apparu lors de la modification des fichiers .csv de test, où il est apparu une exception dans le formatage des données .csv, qui nous a obligé à modifié nos fonctions. Nous avons su revoir le modèle d'une de nos fonctions en rajoutant tout en algorithme permettant de traiter cette exception.

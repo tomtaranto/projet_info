@@ -1,2 +1,1 @@
-# projet_info
-Projet Informatique S2 ENSIIE
+Le projet est séparé en 3 modules majeurs, l'importation des listes, l'implementations des fonctions sur les listes, et l affectation des personnes
